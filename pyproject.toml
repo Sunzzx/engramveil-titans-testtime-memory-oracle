@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "engramveil-titans-testtime-memory-oracle"
+version = "0.1.0"
+description = "Titans test-time neural long-term memory: surprise-gated online GD, momentum forgetting, MAG/MAC/MAL fusion, sliding-window STM, needle-in-haystack probes"
+authors = [{name = "Sunzzx & Hermes AI"}]
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+    "numpy>=1.24",
+]
+keywords = [
+    "titans",
+    "neural-memory",
+    "test-time-learning",
+    "long-term-memory",
+    "surprise-gating",
+    "associative-recall",
+    "long-context",
+    "online-gradient-descent",
+    "sliding-window-attention",
+    "llm-architecture",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0", "pytest-cov>=4.0"]
+
+[project.urls]
+Homepage = "https://github.com/Sunzzx/engramveil-titans-testtime-memory-oracle"
+Repository = "https://github.com/Sunzzx/engramveil-titans-testtime-memory-oracle"
+Issues = "https://github.com/Sunzzx/engramveil-titans-testtime-memory-oracle/issues"
+Sponsor = "https://github.com/sponsors/Sunzzx"
+License-Commercial = "https://buy.stripe.com/test_engramveil_enterprise"
+Documentation = "https://github.com/Sunzzx/engramveil-titans-testtime-memory-oracle#readme"
+
+[project.scripts]
+engramveil = "engramveil.demo:main"
+engramveil-demo = "engramveil.demo:main"
+titans-ltm = "engramveil.demo:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["engramveil*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q --tb=short"
